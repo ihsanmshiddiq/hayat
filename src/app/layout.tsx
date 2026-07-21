@@ -39,13 +39,6 @@ export const metadata: Metadata = {
     icon: "/logo.svg",
   },
   manifest: "/manifest.json",
-  themeColor: "#1a6b4f",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -57,6 +50,13 @@ export const metadata: Metadata = {
       "A calm operating system for habits, prayers, hifdz, goals, and finances.",
     type: "website",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#1a6b4f",
 };
 
 export default function RootLayout({
