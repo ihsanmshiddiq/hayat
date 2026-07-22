@@ -9,7 +9,7 @@ const globalForPrisma = globalThis as unknown as {
 function createPrismaClient() {
   // Local development: use file-based SQLite
   // Production (Vercel): use Turso
-  const isLocal = !process.env.TURSO_AUTH_TOKEN || process.env.DATABASE_URL?.startsWith('file:')
+  const isLocal = !process.env.DATABASE_URL || process.env.DATABASE_URL.startsWith('file:')
 
   if (isLocal) {
     return new PrismaClient({
