@@ -10,6 +10,7 @@ function createPrismaClient() {
   // Local development: use file-based SQLite
   // Production (Vercel): use Turso
   const isLocal = !process.env.DATABASE_URL || process.env.DATABASE_URL.startsWith('file:')
+  console.log('[db] isLocal:', isLocal, 'url:', process.env.DATABASE_URL?.substring(0, 30), 'token:', !!process.env.TURSO_AUTH_TOKEN)
 
   if (isLocal) {
     return new PrismaClient({
